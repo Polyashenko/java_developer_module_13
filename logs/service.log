@@ -1,0 +1,119 @@
+2023-12-01 08:55:47,479 +0200 [main] ERROR (PlanetCrudService.java:30) - Error creating planet: could not execute statement [NULL not allowed for column "ID"; SQL statement:
+insert into PLANET (NAME,ID) values (?,default) [23502-200]] [insert into PLANET (NAME,ID) values (?,default)]
+2023-12-01 08:58:01,602 +0200 [main] ERROR (PlanetCrudService.java:30) - Error creating planet: could not execute statement [NULL not allowed for column "ID"; SQL statement:
+insert into PLANET (NAME,ID) values (?,default) [23502-200]] [insert into PLANET (NAME,ID) values (?,default)]
+2023-12-01 08:58:01,648 +0200 [main] ERROR (PlanetCrudService.java:57) - Error while getting all planets
+org.hibernate.exception.DataException: Could not extract column [1] from JDBC ResultSet [Data conversion error converting "MARS" [22018-200]] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:55)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.getCurrentRowValue(JdbcValuesResultSetImpl.java:310)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.getJdbcValue(RowProcessingStateStandardImpl.java:119)
+	at org.hibernate.sql.results.graph.basic.BasicResultAssembler.extractRawValue(BasicResultAssembler.java:52)
+	at org.hibernate.sql.results.graph.basic.BasicResultAssembler.assemble(BasicResultAssembler.java:59)
+	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeIdentifier(AbstractEntityInitializer.java:370)
+	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.resolveEntityKey(AbstractEntityInitializer.java:347)
+	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.resolveKey(AbstractEntityInitializer.java:289)
+	at org.hibernate.sql.results.internal.InitializersList.resolveKeys(InitializersList.java:83)
+	at org.hibernate.sql.results.internal.StandardRowReader.coordinateInitializers(StandardRowReader.java:107)
+	at org.hibernate.sql.results.internal.StandardRowReader.readRow(StandardRowReader.java:86)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:201)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:109)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:305)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:246)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:509)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:427)
+	at org.hibernate.query.Query.getResultList(Query.java:120)
+	at org.example.service.PlanetCrudService.getAll(PlanetCrudService.java:55)
+	at org.example.App.main(App.java:19)
+Caused by: org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "MARS" [22018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.Value.convertTo(Value.java:875)
+	at org.h2.value.Value.convertTo(Value.java:737)
+	at org.h2.value.Value.getInt(Value.java:623)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:334)
+	at org.hibernate.type.descriptor.jdbc.IntegerJdbcType$2.doExtract(IntegerJdbcType.java:87)
+	at org.hibernate.type.descriptor.jdbc.BasicExtractor.extract(BasicExtractor.java:44)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.getCurrentRowValue(JdbcValuesResultSetImpl.java:302)
+	... 23 more
+Caused by: java.lang.NumberFormatException: For input string: "MARS"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at org.h2.value.Value.convertToInt(Value.java:982)
+	at org.h2.value.Value.convertTo(Value.java:806)
+	... 29 more
+2023-12-01 08:58:58,703 +0200 [main] ERROR (PlanetCrudService.java:30) - Error creating planet: could not execute statement [NULL not allowed for column "ID"; SQL statement:
+insert into PLANET (NAME,ID) values (?,default) [23502-200]] [insert into PLANET (NAME,ID) values (?,default)]
+2023-12-01 08:58:58,749 +0200 [main] ERROR (PlanetCrudService.java:57) - Error while getting all planets
+org.hibernate.exception.DataException: Could not extract column [1] from JDBC ResultSet [Data conversion error converting "MARS" [22018-200]] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:55)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.getCurrentRowValue(JdbcValuesResultSetImpl.java:310)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.getJdbcValue(RowProcessingStateStandardImpl.java:119)
+	at org.hibernate.sql.results.graph.basic.BasicResultAssembler.extractRawValue(BasicResultAssembler.java:52)
+	at org.hibernate.sql.results.graph.basic.BasicResultAssembler.assemble(BasicResultAssembler.java:59)
+	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeIdentifier(AbstractEntityInitializer.java:370)
+	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.resolveEntityKey(AbstractEntityInitializer.java:347)
+	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.resolveKey(AbstractEntityInitializer.java:289)
+	at org.hibernate.sql.results.internal.InitializersList.resolveKeys(InitializersList.java:83)
+	at org.hibernate.sql.results.internal.StandardRowReader.coordinateInitializers(StandardRowReader.java:107)
+	at org.hibernate.sql.results.internal.StandardRowReader.readRow(StandardRowReader.java:86)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:201)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:109)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:305)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:246)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:509)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:427)
+	at org.hibernate.query.Query.getResultList(Query.java:120)
+	at org.example.service.PlanetCrudService.getAll(PlanetCrudService.java:55)
+	at org.example.App.main(App.java:19)
+Caused by: org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "MARS" [22018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.Value.convertTo(Value.java:875)
+	at org.h2.value.Value.convertTo(Value.java:737)
+	at org.h2.value.Value.getInt(Value.java:623)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:334)
+	at org.hibernate.type.descriptor.jdbc.IntegerJdbcType$2.doExtract(IntegerJdbcType.java:87)
+	at org.hibernate.type.descriptor.jdbc.BasicExtractor.extract(BasicExtractor.java:44)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.getCurrentRowValue(JdbcValuesResultSetImpl.java:302)
+	... 23 more
+Caused by: java.lang.NumberFormatException: For input string: "MARS"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at org.h2.value.Value.convertToInt(Value.java:982)
+	at org.h2.value.Value.convertTo(Value.java:806)
+	... 29 more
+2023-12-01 09:11:35,797 +0200 [main] INFO  (PlanetCrudService.java:28) - Planet created: Mars
+2023-12-01 09:12:32,907 +0200 [main] INFO  (PlanetCrudService.java:28) - Planet created: Mars
+2023-12-02 14:04:36,178 +0200 [main] INFO  (PlanetCrudService.java:28) - Planet created: Mars
+2023-12-02 14:04:36,225 +0200 [main] INFO  (ClientCrudService.java:28) - Client created: Dmitry
+2023-12-02 14:55:28,712 +0200 [main] INFO  (PlanetCrudService.java:28) - Planet created: Mars
+2023-12-02 14:55:28,762 +0200 [main] INFO  (ClientCrudService.java:28) - Client created: Dmitry
+2023-12-02 14:55:28,772 +0200 [main] INFO  (ClientCrudService.java:75) - Client deleted: Dmitry
+2023-12-03 09:41:03,005 +0200 [main] INFO  (TicketCrudService.java:29) - Ticket created: 3
+2023-12-03 09:43:22,310 +0200 [main] INFO  (TicketCrudService.java:79) - Ticket deleted: 3
+2023-12-03 09:44:04,534 +0200 [main] INFO  (TicketCrudService.java:29) - Ticket created: 4
+2023-12-03 09:45:53,255 +0200 [main] INFO  (PlanetCrudService.java:79) - Planet deleted: Mars
+2023-12-03 09:45:53,256 +0200 [main] INFO  (PlanetCrudService.java:79) - Planet deleted: Mars
+2023-12-03 09:45:53,258 +0200 [main] INFO  (PlanetCrudService.java:79) - Planet deleted: Mars
+2023-12-03 09:45:53,259 +0200 [main] INFO  (PlanetCrudService.java:79) - Planet deleted: Mars
+2023-12-03 09:45:53,270 +0200 [main] INFO  (TicketCrudService.java:29) - Ticket created: 5
